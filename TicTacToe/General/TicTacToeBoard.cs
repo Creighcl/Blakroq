@@ -109,8 +109,15 @@ public class TicTacToeBoard
         Move(recommended.Position);
     }
 
+    public OnMoveEventArgs GetRecommendedMove(Difficulty difficulty)
+    {
+        MinimaxTree mmt = new(ToString());
+        int position = mmt.Solve(difficulty, 4);
+
+        return new OnMoveEventArgs() { Player = GetPlayerTurn(), Position = position };
+    }
+
     public bool IsBoardEmpty() { return ToString().All(o => o == EMPTY); }
     public bool IsBoardFull() { return !ToString().Contains(EMPTY); }
     public bool IsGameOver() { return PlayerX.IsWinningState() || PlayerO.IsWinningState() || IsBoardFull(); }
-    public OnMoveEventArgs GetRecommendedMove(Difficulty difficulty) { return Agent.Search(this, difficulty); }
 }

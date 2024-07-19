@@ -12,13 +12,10 @@ public class TicTacDemo
     {
         TicTacToeBoard board = new();
 
-        board.Move(0);
-        board.MoveForAgent(Difficulty.HARD);
-
-        board.Move(8);
-        board.MoveForAgent(Difficulty.HARD);
-
-        board.Move(6);
-        board.MoveForAgent(Difficulty.HARD);
+        while(!board.IsGameOver())
+        {
+            board.MoveForAgent(Difficulty.HARD);
+            board.MoveForAgent(Difficulty.EASY);
+        }        
     }
 }
