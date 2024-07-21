@@ -18,7 +18,7 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Build Project
-      run: dotnet build --configuration Release --output ./build
+      run: dotnet build ./TicTacToe/TicTacToe.csproj --configuration Release --output ./build
 
     - name: Create Release
       id: create_release
@@ -37,6 +37,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/YourLibrary.dll
-        asset_name: YourLibrary.dll
+        asset_path: ./build/TicTacToe.dll
+        asset_name: TicTacToe.dll
         asset_content_type: application/octet-stream

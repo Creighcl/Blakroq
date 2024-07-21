@@ -14,7 +14,7 @@ public class TicTacToeBoard
     protected const char X = 'X';
     protected const char O = 'O';
     protected const char EMPTY = '-';
-    protected TicTacAgent Agent = new();
+//    protected TicTacAgent Agent = new();
 
     protected char[] VALID_CHARACTERS_IN_BOARD_STATE = { X, O, EMPTY };
 
