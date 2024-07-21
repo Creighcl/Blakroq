@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="**/*.cs" Exclude="**/*Tests.cs;**/*Demos.cs" />
+    <Compile Remove="**/*Tests.cs;**/*Demos.cs" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
